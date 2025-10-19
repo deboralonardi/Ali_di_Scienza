@@ -70,6 +70,7 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400" data-page="communications">Comunicazioni</a>
+          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400" data-page="webmaster">Webmaster</a>
         </div>
 
         <!-- Menu Mobile -->
@@ -86,20 +87,11 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="communications">Comunicazioni</a>
+          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="webmaster">Webmaster</a>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Toolbar azioni -->
-  <div class="sticky top-16 z-30 bg-black/30 backdrop-blur-md border-y border-blue-500/20">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap gap-2 items-center">
-      <button id="toggleEdit" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">✏️ Modalità editing</button>
-      <button id="saveEdits" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700">💾 Salva (local)</button>
-      <button id="clearEdits" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700">🧹 Ripristina</button>
-      <span class="text-xs text-gray-300">(Il salvataggio resta nel tuo browser)</span>
-    </div>
-  </div>
 
   <main class="min-h-full">
     <!-- HOME -->
@@ -127,7 +119,7 @@
             </svg>
           </div>
           <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent editing-enabled" data-key="home-title">Ali di Scienza</h1>
-          <p class="text-2xl text-gray-300 mb-8 max-w-4xl mx-auto editing-enabled" data-key="home-subtitle">Percorso PCTO nel mondo dell'aviazione: dalla fisica del volo alla meteorologia, dalla tecnica di pilotaggio alla manutenzione.</p>
+          <p class="text-2xl text-gray-300 mb-8 max-w-4xl mx-auto editing-enabled" data-key="home-subtitle">Percorso PCTO nel mondo dell'aviazione: dalla fisica del volo alla meteorologia, dalla tecni[...]
           <div class="flex flex-wrap justify-center gap-4">
             <a href="#materials" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover-lift neon-glow">🚀 Inizia l'Avventura</a>
             <a href="#program" class="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-400 hover:text-white transition-all">📖 Scopri di più</a>
@@ -137,7 +129,7 @@
 
       <section class="py-16 px-6">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent editing-enabled" data-key="caratteristiche-title">Caratteristiche del Progetto</h2>
+          <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent editing-enabled" data-key="caratteristiche-title">Caratteristiche del[...]
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-gradient-to-br from-blue-900 to-purple-900 p-8 rounded-2xl hover-lift border border-blue-500/30">
               <div class="flex items-center gap-3 mb-4">
@@ -190,7 +182,7 @@
             <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="materials-subtitle">Accedi a manuali, fogli di calcolo e risorse multimediali per il tuo percorso PCTO.</p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div id="materialsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-8 rounded-2xl hover-lift border border-blue-500/30">
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m1-title">Manuale di Aerodinamica</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m1-desc">Guida ai principi fisici del volo.</p>
@@ -250,11 +242,11 @@
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
                   <label for="schoolName" class="block text-sm font-medium text-gray-300 mb-2">🏫 Nome Istituto *</label>
-                  <input type="text" id="schoolName" name="schoolName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                  <input type="text" id="schoolName" name="schoolName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focu[...]
                 </div>
                 <div>
                   <label for="schoolType" class="block text-sm font-medium text-gray-300 mb-2">📚 Tipo di Scuola *</label>
-                  <select id="schoolType" name="schoolType" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                  <select id="schoolType" name="schoolType" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-tr[...]
                     <option value="">Seleziona tipo</option>
                     <option value="liceo-scientifico">Liceo Scientifico</option>
                     <option value="istituto-tecnico">Istituto Tecnico</option>
@@ -267,11 +259,11 @@
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
                   <label for="city" class="block text-sm font-medium text-gray-300 mb-2">🌍 Città *</label>
-                  <input type="text" id="city" name="city" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                  <input type="text" id="city" name="city" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-tra[...]
                 </div>
                 <div>
                   <label for="province" class="block text-sm font-medium text-gray-300 mb-2">📍 Provincia *</label>
-                  <input type="text" id="province" name="province" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                  <input type="text" id="province" name="province" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:bo[...]
                 </div>
               </div>
 
@@ -280,21 +272,21 @@
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
                     <label for="contactName" class="block text-sm font-medium text-gray-300 mb-2">👤 Nome e Cognome *</label>
-                    <input type="text" id="contactName" name="contactName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    <input type="text" id="contactName" name="contactName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 [...]
                   </div>
                   <div>
                     <label for="contactRole" class="block text-sm font-medium text-gray-300 mb-2">💼 Ruolo *</label>
-                    <input type="text" id="contactRole" name="contactRole" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    <input type="text" id="contactRole" name="contactRole" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 [...]
                   </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6 mt-6">
                   <div>
                     <label for="contactEmail" class="block text-sm font-medium text-gray-300 mb-2">📧 Email *</label>
-                    <input type="email" id="contactEmail" name="contactEmail" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    <input type="email" id="contactEmail" name="contactEmail" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-5[...]
                   </div>
                   <div>
                     <label for="contactPhone" class="block text-sm font-medium text-gray-300 mb-2">📱 Telefono</label>
-                    <input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    <input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:bo[...]
                   </div>
                 </div>
               </div>
@@ -304,7 +296,7 @@
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
                     <label for="studentsNumber" class="block text-sm font-medium text-gray-300 mb-2">👥 Numero Studenti *</label>
-                    <select id="studentsNumber" name="studentsNumber" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <select id="studentsNumber" name="studentsNumber" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus[...]
                       <option value="">Seleziona numero</option>
                       <option value="10-20">10–20</option>
                       <option value="21-30">21–30</option>
@@ -314,7 +306,7 @@
                   </div>
                   <div>
                     <label for="classYear" class="block text-sm font-medium text-gray-300 mb-2">🎓 Anno Scolastico *</label>
-                    <select id="classYear" name="classYear" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <select id="classYear" name="classYear" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-tr[...]
                       <option value="">Seleziona anno</option>
                       <option value="terzo">Terzo</option>
                       <option value="quarto">Quarto</option>
@@ -325,7 +317,7 @@
                 </div>
                 <div class="mt-6">
                   <label for="projectPeriod" class="block text-sm font-medium text-gray-300 mb-2">📅 Periodo Preferito *</label>
-                  <select id="projectPeriod" name="projectPeriod" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                  <select id="projectPeriod" name="projectPeriod" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:bor[...]
                     <option value="">Seleziona periodo</option>
                     <option value="ottobre-dicembre">Ottobre – Dicembre</option>
                     <option value="gennaio-marzo">Gennaio – Marzo</option>
@@ -337,7 +329,7 @@
 
               <div class="border-t border-gray-600 pt-6">
                 <label for="motivation" class="block text-sm font-medium text-gray-300 mb-2">💭 Motivazioni e Aspettative *</label>
-                <textarea id="motivation" name="motivation" rows="4" required placeholder="Perché siete interessati al progetto e cosa vi aspettate..." class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
+                <textarea id="motivation" name="motivation" rows="4" required placeholder="Perché siete interessati al progetto e cosa vi aspettate..." class="w-full px-4 py-3 bg-gray-700 border bord[...]
               </div>
 
               <div class="border-t border-gray-600 pt-6">
@@ -412,7 +404,7 @@
           </div>
 
           <!-- Galleria immagini -->
-          <p class="text-gray-400 text-sm mb-4">Suggerimento: carica le immagini in una cartella <code>media/</code> accanto a questo file, poi sostituisci i nomi qui sotto. Oppure incolla URL pubblici (Drive, Dropbox, ecc.).</p>
+          <p class="text-gray-400 text-sm mb-4">Suggerimento: carica le immagini in una cartella <code>media/</code> accanto a questo file, poi sostituisci i nomi qui sotto. Oppure incolla URL pubblic[...]
           <div id="mediaGrid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
               <img src="media/aliante1.jpg" alt="Aliante in decollo" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante1.jpg">
@@ -452,10 +444,75 @@
         </div>
       </section>
     </section>
+
+    <!-- WEBMASTER: pagina per gestione asset e pulsanti editing -->
+    <section id="webmaster" class="page">
+      <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">Webmaster</h1>
+            <p class="text-gray-300">Area per gestire contenuti multimediali e attivare la modalità editing (solo qui sono visibili i controlli).</p>
+          </div>
+
+          <!-- Bottoni editing (visibili solo in questa sezione) -->
+          <div class="mb-8 flex flex-wrap gap-3">
+            <button id="toggleEdit" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">✏️ Modalità editing</button>
+            <button id="saveEdits" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700">💾 Salva (local)</button>
+            <button id="clearEdits" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700">🧹 Ripristina</button>
+          </div>
+
+          <!-- Pannello di gestione asset -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Immagini -->
+            <div class="bg-gray-800/60 p-6 rounded-lg">
+              <h3 class="font-bold text-lg text-white mb-3">Immagini</h3>
+              <div class="space-y-2">
+                <input id="imgUrl" type="url" placeholder="https://.../immagine.jpg" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <input id="imgTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <div class="flex gap-2">
+                  <button id="addImage" class="flex-1 px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Aggiungi</button>
+                  <button id="insertAllImages" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
+                </div>
+              </div>
+              <div id="imagesList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
+            </div>
+
+            <!-- Video -->
+            <div class="bg-gray-800/60 p-6 rounded-lg">
+              <h3 class="font-bold text-lg text-white mb-3">Video</h3>
+              <div class="space-y-2">
+                <input id="videoUrl" type="url" placeholder="https://.../video.mp4 o YouTube URL" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <input id="videoTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <div class="flex gap-2">
+                  <button id="addVideo" class="flex-1 px-3 py-2 rounded bg-green-600 hover:bg-green-700">Aggiungi</button>
+                  <button id="insertAllVideos" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
+                </div>
+              </div>
+              <div id="videosList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
+            </div>
+
+            <!-- Materiali -->
+            <div class="bg-gray-800/60 p-6 rounded-lg">
+              <h3 class="font-bold text-lg text-white mb-3">Materiali / Files</h3>
+              <div class="space-y-2">
+                <input id="matUrl" type="url" placeholder="https://.../file.pdf" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <input id="matTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
+                <div class="flex gap-2">
+                  <button id="addMaterial" class="flex-1 px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Aggiungi</button>
+                  <button id="insertAllMaterials" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
+                </div>
+              </div>
+              <div id="materialsList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
   </main>
 
   <script>
-    // ===== Navegazione a sezioni (hash + data-page) =====
+    // ===== Navigazione a sezioni (hash + data-page) =====
     function setActivePage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const page = document.getElementById(id) || document.getElementById('home');
@@ -465,6 +522,8 @@
       });
       // Aggiorna hash senza scroll brusco
       if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+      // scroll top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function initNav() {
@@ -499,7 +558,6 @@
     function applyEditable(enabled){
       const nodes = document.querySelectorAll('.editing-enabled');
       nodes.forEach(n => {
-        // Evita di rendere editabili link, pulsanti e controlli form
         const tag = n.tagName.toLowerCase();
         const forbidden = ['a','button','input','select','textarea','svg'];
         if (forbidden.includes(tag)) return;
@@ -516,11 +574,8 @@
       const toggle = document.getElementById('toggleEdit');
       const save = document.getElementById('saveEdits');
       const clear = document.getElementById('clearEdits');
-
-      toggle.addEventListener('click', ()=>{ editing = !editing; applyEditable(editing); });
-
-      // Salva i testi editati per data-key in localStorage
-      save.addEventListener('click', ()=>{
+      if (toggle) toggle.addEventListener('click', ()=>{ editing = !editing; applyEditable(editing); });
+      if (save) save.addEventListener('click', ()=>{
         const data = {};
         document.querySelectorAll('.editing-enabled[data-key]').forEach(el=>{
           data[el.getAttribute('data-key')] = el.innerHTML.trim();
@@ -528,8 +583,7 @@
         localStorage.setItem('pctosite_edits', JSON.stringify(data));
         alert('Contenuti salvati nel browser.');
       });
-
-      clear.addEventListener('click', ()=>{
+      if (clear) clear.addEventListener('click', ()=>{
         if (confirm('Ripristinare i testi originali?')){
           localStorage.removeItem('pctosite_edits');
           location.reload();
@@ -551,19 +605,11 @@
 
     // ===== Download helper =====
     function downloadFile(filename){
-      // Assumi che i file siano nella cartella /files/ accanto all'HTML.
       const url = (filename.startsWith('http') ? filename : `files/${filename}`);
       window.open(url, '_blank');
     }
 
-    // ===== Inizializza =====
-    document.addEventListener('DOMContentLoaded', ()=>{
-      initNav();
-      initMobileMenu();
-      initEditingToolbar();
-      applyEditable(false); // parte non in editing
-    });
-      // ===== Lightbox Media =====
+    // ===== Lightbox Media =====
     function initLightbox(){
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
@@ -574,60 +620,212 @@
           lb.classList.add('flex');
         });
       });
-      lb.addEventListener('click', ()=>{
-        lb.classList.add('hidden');
-        lb.classList.remove('flex');
-        lbImg.src = '';
-      });
-      document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') lb.click(); });
+      if (lb) {
+        lb.addEventListener('click', ()=>{
+          lb.classList.add('hidden');
+          lb.classList.remove('flex');
+          const lbImg = document.getElementById('lightboxImg');
+          if (lbImg) lbImg.src = '';
+        });
+      }
+      document.addEventListener('keydown', (e)=>{ if (e.key==='Escape' && lb) lb.click(); });
     }
 
+    // ===== Webmaster: gestione asset =====
+    const ASSETS_KEY = 'webmaster_assets';
+    function loadAssets(){
+      const raw = localStorage.getItem(ASSETS_KEY);
+      if (!raw) return { images:[], videos:[], materials:[] };
+      try { return JSON.parse(raw); } catch(e){ return { images:[], videos:[], materials:[] }; }
+    }
+    function saveAssets(obj){ localStorage.setItem(ASSETS_KEY, JSON.stringify(obj)); }
+
+    function renderAssets(){
+      const data = loadAssets();
+      const imagesList = document.getElementById('imagesList');
+      const videosList = document.getElementById('videosList');
+      const materialsList = document.getElementById('materialsList');
+      if (imagesList) imagesList.innerHTML = data.images.map((it,idx)=>`
+        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
+          <div>
+            <div class="text-sm text-gray-200">${it.title || 'Immagine'}</div>
+            <div class="text-xs text-gray-400 break-all">${it.url}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button data-type="image" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
+            <button data-type="image" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
+          </div>
+        </div>`).join('');
+      if (videosList) videosList.innerHTML = data.videos.map((it,idx)=>`
+        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
+          <div>
+            <div class="text-sm text-gray-200">${it.title || 'Video'}</div>
+            <div class="text-xs text-gray-400 break-all">${it.url}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button data-type="video" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
+            <button data-type="video" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
+          </div>
+        </div>`).join('');
+      if (materialsList) materialsList.innerHTML = data.materials.map((it,idx)=>`
+        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
+          <div>
+            <div class="text-sm text-gray-200">${it.title || 'Materiale'}</div>
+            <div class="text-xs text-gray-400 break-all">${it.url}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button data-type="material" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
+            <button data-type="material" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
+          </div>
+        </div>`).join('');
+      // attiva listener sui bottoni generati
+      document.querySelectorAll('.delAsset').forEach(b=>{
+        b.onclick = (e)=>{
+          const t = e.currentTarget.getAttribute('data-type');
+          const i = Number(e.currentTarget.getAttribute('data-idx'));
+          const obj = loadAssets();
+          obj[t + (t==='material' ? 's' : 's')].splice(i,1); // images/videos/materials
+          saveAssets(obj);
+          renderAssets();
+        };
+      });
+      document.querySelectorAll('.insertAsset').forEach(b=>{
+        b.onclick = (e)=>{
+          const t = e.currentTarget.getAttribute('data-type');
+          const i = Number(e.currentTarget.getAttribute('data-idx'));
+          const obj = loadAssets();
+          const item = (t==='image' ? obj.images[i] : t==='video' ? obj.videos[i] : obj.materials[i]);
+          insertAssetToPage(t, item);
+        };
+      });
+    }
+
+    function addAsset(type, url, title){
+      if (!url) return alert('Inserisci un URL valido');
+      const obj = loadAssets();
+      if (type === 'image') obj.images.unshift({ url, title });
+      if (type === 'video') obj.videos.unshift({ url, title });
+      if (type === 'material') obj.materials.unshift({ url, title });
+      saveAssets(obj);
+      renderAssets();
+    }
+
+    // inserisce asset nelle rispettive sezioni della pagina
+    function insertAssetToPage(type, item){
+      if (!item || !item.url) return;
+      if (type === 'image'){
+        const grid = document.getElementById('mediaGrid');
+        if (!grid) return alert('Galleria non trovata');
+        const fig = document.createElement('figure');
+        fig.className = 'bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden';
+        fig.innerHTML = `<img src="${item.url}" alt="${item.title || 'Immagine'}" class="w-full h-44 object-cover cursor-zoom-in" data-full="${item.url}">
+                         <figcaption class="p-3 text-sm text-gray-300">${item.title || ''}</figcaption>`;
+        grid.prepend(fig);
+        // riattiva lightbox per la nuova immagine
+        fig.querySelector('img').addEventListener('click', ()=>{
+          const lbImg = document.getElementById('lightboxImg');
+          if (lbImg){ lbImg.src = item.url; document.getElementById('lightbox').classList.remove('hidden'); document.getElementById('lightbox').classList.add('flex'); }
+        });
+        alert('Immagine inserita in galleria');
+      } else if (type === 'video'){
+        // aggiunge un link/card nella sezione Media (sotto titolo)
+        const container = document.querySelector('#media .max-w-6xl > .text-center');
+        // se non troviamo struttura, append a mediaGrid
+        const mediaParent = document.getElementById('mediaGrid');
+        const node = document.createElement('div');
+        node.className = 'bg-gray-800/60 border border-gray-700 rounded-lg p-4';
+        // se è youtube link, embed small, altrimenti mostra link
+        if (/youtube\.com|youtu\.be/.test(item.url)){
+          // costruisci iframe responsivo (piccolo)
+          node.innerHTML = `<div class="aspect-w-16 aspect-h-9"><iframe src="${item.url.replace('watch?v=','embed/')}" frameborder="0" allowfullscreen class="w-full h-48"></iframe></div><div class="p-2 text-sm text-gray-300">${item.title || ''}</div>`;
+        } else {
+          node.innerHTML = `<div class="text-sm text-gray-200 mb-2">${item.title || 'Video'}</div><a href="${item.url}" target="_blank" class="text-sm text-blue-300 underline break-all">${item.url}</a>`;
+        }
+        if (mediaParent) mediaParent.prepend(node);
+        alert('Video inserito nella sezione Media');
+      } else if (type === 'material'){
+        const grid = document.getElementById('materialsGrid');
+        if (!grid) return alert('Sezione materiali non trovata');
+        const card = document.createElement('div');
+        card.className = 'bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl hover-lift border border-gray-700/30';
+        card.innerHTML = `<h3 class="text-2xl font-bold text-white mb-2">${item.title || 'Materiale'}</h3>
+          <p class="text-gray-300 mb-4">${item.title ? '' : ''}</p>
+          <a href="${item.url}" target="_blank" class="w-full inline-block bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-4 rounded-lg font-semibold text-center">📥 Apri / Scarica</a>`;
+        grid.prepend(card);
+        alert('Materiale inserito nella sezione Materiali');
+      }
+    }
+
+    // inizializza i listener del pannello webmaster
+    function initWebmasterPanel(){
+      document.getElementById('addImage')?.addEventListener('click', ()=> {
+        const url = document.getElementById('imgUrl').value.trim();
+        const title = document.getElementById('imgTitle').value.trim();
+        addAsset('image', url, title);
+      });
+      document.getElementById('addVideo')?.addEventListener('click', ()=> {
+        const url = document.getElementById('videoUrl').value.trim();
+        const title = document.getElementById('videoTitle').value.trim();
+        addAsset('video', url, title);
+      });
+      document.getElementById('addMaterial')?.addEventListener('click', ()=> {
+        const url = document.getElementById('matUrl').value.trim();
+        const title = document.getElementById('matTitle').value.trim();
+        addAsset('material', url, title);
+      });
+      document.getElementById('insertAllImages')?.addEventListener('click', ()=>{
+        const obj = loadAssets();
+        obj.images.slice().reverse().forEach(it => insertAssetToPage('image', it));
+      });
+      document.getElementById('insertAllVideos')?.addEventListener('click', ()=>{
+        const obj = loadAssets();
+        obj.videos.slice().reverse().forEach(it => insertAssetToPage('video', it));
+      });
+      document.getElementById('insertAllMaterials')?.addEventListener('click', ()=>{
+        const obj = loadAssets();
+        obj.materials.slice().reverse().forEach(it => insertAssetToPage('material', it));
+      });
+      renderAssets();
+    }
+
+    // ===== Inizializza tutto =====
     document.addEventListener('DOMContentLoaded', ()=>{
+      initNav();
+      initMobileMenu();
+      initEditingToolbar();
+      applyEditable(false); // parte non in editing
       initLightbox();
+      initWebmasterPanel();
     });
-/* --- Guard per Modalità Editing (aggiunta autonoma) -----------------------
-   Incolla questo blocco DOPO il tuo script esistente, prima di </body>.
-   Cambia il codice a tuo piacimento nella costante EDIT_CODE.
-   Nota: protezione lato client (visibile nel sorgente).
---------------------------------------------------------------------------- */
-(function(){
-  const EDIT_CODE = 'ACAO-Edit-2025';          // <--- cambia qui il tuo codice fisso
-  const EDIT_KEY  = 'pctosite_editor';         // chiave sessione per sblocco
-  function canEdit(){ return sessionStorage.getItem(EDIT_KEY) === '1'; }
 
-  // aspetta che tutto il resto sia pronto
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupGuard);
-  } else {
-    setupGuard();
-  }
-
-  function setupGuard(){
-    var btn = document.getElementById('toggleEdit');
-    if (!btn) return;
-
-    // Rimuove eventuali vecchi listener ricreando il nodo (trucco safe)
-    var clone = btn.cloneNode(true);
-    btn.parentNode.replaceChild(clone, btn);
-    btn = document.getElementById('toggleEdit');
-
-    btn.addEventListener('click', function(){
-      // 'editing' e 'applyEditable' sono già definiti nel tuo script
-      if (!window.editing && !canEdit()){
-        var code = prompt('Inserisci il codice per attivare la Modifica');
-        if (code !== EDIT_CODE) { alert('Codice errato'); return; }
-        sessionStorage.setItem(EDIT_KEY, '1');
+    /* --- Guard per Modalità Editing (sostituzione robusta) ----------------- */
+    (function(){
+      const EDIT_CODE = 'ACAO-Edit-2025';   // codice visibile nel client (solo UX)
+      const EDIT_KEY  = 'pctosite_editor';  // chiave sessione
+      function canEdit(){ return sessionStorage.getItem(EDIT_KEY) === '1'; }
+      // intercetta il click sul pulsante toggleEdit in fase di capture
+      function handleToggleClickEvent(ev){
+        const btn = ev.target.closest && ev.target.closest('#toggleEdit');
+        if (!btn) return;
+        ev.preventDefault();
+        if (!editing && !canEdit()){
+          const code = prompt('Inserisci il codice per attivare la Modifica');
+          if (code !== EDIT_CODE) { alert('Codice errato'); return; }
+          sessionStorage.setItem(EDIT_KEY, '1');
+        }
+        editing = !editing;
+        if (typeof applyEditable === 'function') applyEditable(editing);
       }
-      window.editing = !window.editing;
-      if (typeof window.applyEditable === 'function') {
-        window.applyEditable(window.editing);
-      }
-      // opzionale: mostra un feedback
-      // if (window.editing) alert('Editing attivato'); else alert('Editing disattivato');
-    });
-  }
-})();
-</script>
+      document.addEventListener('click', handleToggleClickEvent, true);
+      document.addEventListener('keydown', function(e){
+        const active = document.activeElement;
+        if ((e.key === 'Enter' || e.key === ' ') && active && active.id === 'toggleEdit') {
+          e.preventDefault();
+          handleToggleClickEvent({ target: active, preventDefault: ()=>{} });
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
