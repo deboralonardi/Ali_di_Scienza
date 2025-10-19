@@ -586,5 +586,49 @@
       initLightbox();
     });
   </script>
+/* --- Guard per Modalità Editing (aggiunta autonoma) -----------------------
+   Incolla questo blocco DOPO il tuo script esistente, prima di </body>.
+   Cambia il codice a tuo piacimento nella costante EDIT_CODE.
+   Nota: protezione lato client (visibile nel sorgente).
+--------------------------------------------------------------------------- */
+(function(){
+  const EDIT_CODE = 'ACAO-Edit-2025';          // <--- cambia qui il tuo codice fisso
+  const EDIT_KEY  = 'pctosite_editor';         // chiave sessione per sblocco
+  function canEdit(){ return sessionStorage.getItem(EDIT_KEY) === '1'; }
+
+  // aspetta che tutto il resto sia pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupGuard);
+  } else {
+    setupGuard();
+  }
+
+  function setupGuard(){
+    var btn = document.getElementById('toggleEdit');
+    if (!btn) return;
+
+    // Rimuove eventuali vecchi listener ricreando il nodo (trucco safe)
+    var clone = btn.cloneNode(true);
+    btn.parentNode.replaceChild(clone, btn);
+    btn = document.getElementById('toggleEdit');
+
+    btn.addEventListener('click', function(){
+      // 'editing' e 'applyEditable' sono già definiti nel tuo script
+      if (!window.editing && !canEdit()){
+        var code = prompt('Inserisci il codice per attivare la Modifica');
+        if (code !== EDIT_CODE) { alert('Codice errato'); return; }
+        sessionStorage.setItem(EDIT_KEY, '1');
+      }
+      window.editing = !window.editing;
+      if (typeof window.applyEditable === 'function') {
+        window.applyEditable(window.editing);
+      }
+      // opzionale: mostra un feedback
+      // if (window.editing) alert('Editing attivato'); else alert('Editing disattivato');
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
