@@ -70,6 +70,7 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400" data-page="communications">Comunicazioni</a>
+          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400" data-page="webmaster">Webmaster</a>
         </div>
 
         <!-- Menu Mobile -->
@@ -86,13 +87,14 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="communications">Comunicazioni</a>
+          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="webmaster">Webmaster</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Toolbar azioni -->
-  <div class="sticky top-16 z-30 bg-black/30 backdrop-blur-md border-y border-blue-500/20">
+  <!-- Toolbar azioni: rimane nel DOM ma la mostriamo SOLO nella pagina "webmaster" -->
+  <div id="toolbarActions" class="sticky top-16 z-30 bg-black/30 backdrop-blur-md border-y border-blue-500/20">
     <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap gap-2 items-center">
       <button id="toggleEdit" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">✏️ Modalità editing</button>
       <button id="saveEdits" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700">💾 Salva (local)</button>
@@ -452,6 +454,18 @@
         </div>
       </section>
     </section>
+
+    <!-- WEBMASTER: pagina con solo header + dicitura; toolbar verrà mostrata SOLO su questa pagina -->
+    <section id="webmaster" class="page">
+      <section class="py-40 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">Webmaster</h1>
+          <p class="text-gray-300">Area riservata al webmaster. Contatto: <strong>debora.lonardi@scuola.istruzione.it</strong></p>
+          <p class="text-sm text-gray-400 mt-4">I controlli per editing (✏️ Modalità editing / 💾 Salva / 🧹 Ripristina) sono disponibili solo in questa pagina.</p>
+        </div>
+      </section>
+    </section>
+
   </main>
 
   <script>
@@ -465,6 +479,10 @@
       });
       // Aggiorna hash senza scroll brusco
       if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+
+      // Mostra la toolbar solo nella pagina "webmaster"
+      const toolbar = document.getElementById('toolbarActions');
+      if (toolbar) toolbar.classList.toggle('hidden', id !== 'webmaster');
     }
 
     function initNav() {
@@ -509,7 +527,8 @@
           n.removeAttribute('contenteditable');
         }
       });
-      document.getElementById('editBanner').classList.toggle('hidden', !enabled);
+      const banner = document.getElementById('editBanner');
+      if (banner) banner.classList.toggle('hidden', !enabled);
     }
 
     function initEditingToolbar(){
@@ -532,8 +551,6 @@
             if (code === null) return; // annullato
             if (code !== EDIT_CODE) { alert('Codice errato'); return; }
             sessionStorage.setItem(EDIT_KEY, '1');
-            // opzionale: notifica sblocco
-            // alert('Modalità editing sbloccata per questa sessione.');
           }
           // se siamo qui la sessione è sbloccata: toggle editing
           editing = !editing;
@@ -578,14 +595,7 @@
       window.open(url, '_blank');
     }
 
-    // ===== Inizializza =====
-    document.addEventListener('DOMContentLoaded', ()=>{
-      initNav();
-      initMobileMenu();
-      initEditingToolbar();
-      applyEditable(false); // parte non in editing
-    });
-      // ===== Lightbox Media =====
+    // ===== Lightbox Media =====
     function initLightbox(){
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
@@ -596,16 +606,29 @@
           lb.classList.add('flex');
         });
       });
-      lb.addEventListener('click', ()=>{
-        lb.classList.add('hidden');
-        lb.classList.remove('flex');
-        lbImg.src = '';
-      });
-      document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') lb.click(); });
+      if (lb) {
+        lb.addEventListener('click', ()=>{
+          lb.classList.add('hidden');
+          lb.classList.remove('flex');
+          const lbImg = document.getElementById('lightboxImg');
+          if (lbImg) lbImg.src = '';
+        });
+        document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') lb.click(); });
+      }
     }
 
+    // ===== Inizializza =====
     document.addEventListener('DOMContentLoaded', ()=>{
+      initNav();
+      initMobileMenu();
+      initEditingToolbar();
+      applyEditable(false); // parte non in editing
       initLightbox();
+
+      // All'avvio: la toolbar deve essere visibile SOLO se la pagina iniziale è webmaster
+      const start = (location.hash || '#home').replace('#','');
+      const toolbar = document.getElementById('toolbarActions');
+      if (toolbar) toolbar.classList.toggle('hidden', start !== 'webmaster');
     });
   </script>
 </body>
