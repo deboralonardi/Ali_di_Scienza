@@ -70,7 +70,6 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400" data-page="communications">Comunicazioni</a>
-          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400" data-page="webmaster">Webmaster</a>
         </div>
 
         <!-- Menu Mobile -->
@@ -87,11 +86,20 @@
           <a href="#program" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="program">Programma</a>
           <a href="#media" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="media">Media</a>
           <a href="#communications" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="communications">Comunicazioni</a>
-          <a href="#webmaster" class="nav-link text-gray-300 hover:text-blue-400 py-2" data-page="webmaster">Webmaster</a>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Toolbar azioni -->
+  <div class="sticky top-16 z-30 bg-black/30 backdrop-blur-md border-y border-blue-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap gap-2 items-center">
+      <button id="toggleEdit" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">✏️ Modalità editing</button>
+      <button id="saveEdits" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700">💾 Salva (local)</button>
+      <button id="clearEdits" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700">🧹 Ripristina</button>
+      <span class="text-xs text-gray-300">(Il salvataggio resta nel tuo browser)</span>
+    </div>
+  </div>
 
   <main class="min-h-full">
     <!-- HOME -->
@@ -182,7 +190,7 @@
             <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="materials-subtitle">Accedi a manuali, fogli di calcolo e risorse multimediali per il tuo percorso PCTO.</p>
           </div>
 
-          <div id="materialsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-8 rounded-2xl hover-lift border border-blue-500/30">
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m1-title">Manuale di Aerodinamica</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m1-desc">Guida ai principi fisici del volo.</p>
@@ -444,75 +452,10 @@
         </div>
       </section>
     </section>
-
-    <!-- WEBMASTER: pagina per gestione asset e pulsanti editing -->
-    <section id="webmaster" class="page">
-      <section class="py-16 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">Webmaster</h1>
-            <p class="text-gray-300">Area per gestire contenuti multimediali e attivare la modalità editing (solo qui sono visibili i controlli).</p>
-          </div>
-
-          <!-- Bottoni editing (visibili solo in questa sezione) -->
-          <div class="mb-8 flex flex-wrap gap-3">
-            <button id="toggleEdit" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">✏️ Modalità editing</button>
-            <button id="saveEdits" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700">💾 Salva (local)</button>
-            <button id="clearEdits" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700">🧹 Ripristina</button>
-          </div>
-
-          <!-- Pannello di gestione asset -->
-          <div class="grid md:grid-cols-3 gap-6">
-            <!-- Immagini -->
-            <div class="bg-gray-800/60 p-6 rounded-lg">
-              <h3 class="font-bold text-lg text-white mb-3">Immagini</h3>
-              <div class="space-y-2">
-                <input id="imgUrl" type="url" placeholder="https://.../immagine.jpg" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <input id="imgTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <div class="flex gap-2">
-                  <button id="addImage" class="flex-1 px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Aggiungi</button>
-                  <button id="insertAllImages" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
-                </div>
-              </div>
-              <div id="imagesList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
-            </div>
-
-            <!-- Video -->
-            <div class="bg-gray-800/60 p-6 rounded-lg">
-              <h3 class="font-bold text-lg text-white mb-3">Video</h3>
-              <div class="space-y-2">
-                <input id="videoUrl" type="url" placeholder="https://.../video.mp4 o YouTube URL" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <input id="videoTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <div class="flex gap-2">
-                  <button id="addVideo" class="flex-1 px-3 py-2 rounded bg-green-600 hover:bg-green-700">Aggiungi</button>
-                  <button id="insertAllVideos" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
-                </div>
-              </div>
-              <div id="videosList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
-            </div>
-
-            <!-- Materiali -->
-            <div class="bg-gray-800/60 p-6 rounded-lg">
-              <h3 class="font-bold text-lg text-white mb-3">Materiali / Files</h3>
-              <div class="space-y-2">
-                <input id="matUrl" type="url" placeholder="https://.../file.pdf" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <input id="matTitle" type="text" placeholder="Titolo (opzionale)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" />
-                <div class="flex gap-2">
-                  <button id="addMaterial" class="flex-1 px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Aggiungi</button>
-                  <button id="insertAllMaterials" class="px-3 py-2 rounded bg-indigo-600 hover:bg-indigo-700">Inserisci tutte</button>
-                </div>
-              </div>
-              <div id="materialsList" class="mt-4 space-y-2 text-sm text-gray-300"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-
   </main>
 
   <script>
-    // ===== Navigazione a sezioni (hash + data-page) =====
+    // ===== Navegazione a sezioni (hash + data-page) =====
     function setActivePage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const page = document.getElementById(id) || document.getElementById('home');
@@ -522,8 +465,6 @@
       });
       // Aggiorna hash senza scroll brusco
       if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
-      // scroll top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function initNav() {
@@ -558,6 +499,7 @@
     function applyEditable(enabled){
       const nodes = document.querySelectorAll('.editing-enabled');
       nodes.forEach(n => {
+        // Evita di rendere editabili link, pulsanti e controlli form
         const tag = n.tagName.toLowerCase();
         const forbidden = ['a','button','input','select','textarea','svg'];
         if (forbidden.includes(tag)) return;
@@ -574,8 +516,11 @@
       const toggle = document.getElementById('toggleEdit');
       const save = document.getElementById('saveEdits');
       const clear = document.getElementById('clearEdits');
-      if (toggle) toggle.addEventListener('click', ()=>{ editing = !editing; applyEditable(editing); });
-      if (save) save.addEventListener('click', ()=>{
+
+      toggle.addEventListener('click', ()=>{ editing = !editing; applyEditable(editing); });
+
+      // Salva i testi editati per data-key in localStorage
+      save.addEventListener('click', ()=>{
         const data = {};
         document.querySelectorAll('.editing-enabled[data-key]').forEach(el=>{
           data[el.getAttribute('data-key')] = el.innerHTML.trim();
@@ -583,7 +528,8 @@
         localStorage.setItem('pctosite_edits', JSON.stringify(data));
         alert('Contenuti salvati nel browser.');
       });
-      if (clear) clear.addEventListener('click', ()=>{
+
+      clear.addEventListener('click', ()=>{
         if (confirm('Ripristinare i testi originali?')){
           localStorage.removeItem('pctosite_edits');
           location.reload();
@@ -605,11 +551,19 @@
 
     // ===== Download helper =====
     function downloadFile(filename){
+      // Assumi che i file siano nella cartella /files/ accanto all'HTML.
       const url = (filename.startsWith('http') ? filename : `files/${filename}`);
       window.open(url, '_blank');
     }
 
-    // ===== Lightbox Media =====
+    // ===== Inizializza =====
+    document.addEventListener('DOMContentLoaded', ()=>{
+      initNav();
+      initMobileMenu();
+      initEditingToolbar();
+      applyEditable(false); // parte non in editing
+    });
+      // ===== Lightbox Media =====
     function initLightbox(){
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
@@ -620,212 +574,58 @@
           lb.classList.add('flex');
         });
       });
-      if (lb) {
-        lb.addEventListener('click', ()=>{
-          lb.classList.add('hidden');
-          lb.classList.remove('flex');
-          const lbImg = document.getElementById('lightboxImg');
-          if (lbImg) lbImg.src = '';
-        });
-      }
-      document.addEventListener('keydown', (e)=>{ if (e.key==='Escape' && lb) lb.click(); });
+      lb.addEventListener('click', ()=>{
+        lb.classList.add('hidden');
+        lb.classList.remove('flex');
+        lbImg.src = '';
+      });
+      document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') lb.click(); });
     }
 
-    // ===== Webmaster: gestione asset =====
-    const ASSETS_KEY = 'webmaster_assets';
-    function loadAssets(){
-      const raw = localStorage.getItem(ASSETS_KEY);
-      if (!raw) return { images:[], videos:[], materials:[] };
-      try { return JSON.parse(raw); } catch(e){ return { images:[], videos:[], materials:[] }; }
-    }
-    function saveAssets(obj){ localStorage.setItem(ASSETS_KEY, JSON.stringify(obj)); }
-
-    function renderAssets(){
-      const data = loadAssets();
-      const imagesList = document.getElementById('imagesList');
-      const videosList = document.getElementById('videosList');
-      const materialsList = document.getElementById('materialsList');
-      if (imagesList) imagesList.innerHTML = data.images.map((it,idx)=>`
-        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
-          <div>
-            <div class="text-sm text-gray-200">${it.title || 'Immagine'}</div>
-            <div class="text-xs text-gray-400 break-all">${it.url}</div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button data-type="image" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
-            <button data-type="image" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
-          </div>
-        </div>`).join('');
-      if (videosList) videosList.innerHTML = data.videos.map((it,idx)=>`
-        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
-          <div>
-            <div class="text-sm text-gray-200">${it.title || 'Video'}</div>
-            <div class="text-xs text-gray-400 break-all">${it.url}</div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button data-type="video" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
-            <button data-type="video" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
-          </div>
-        </div>`).join('');
-      if (materialsList) materialsList.innerHTML = data.materials.map((it,idx)=>`
-        <div class="flex items-center justify-between bg-gray-900/40 p-2 rounded">
-          <div>
-            <div class="text-sm text-gray-200">${it.title || 'Materiale'}</div>
-            <div class="text-xs text-gray-400 break-all">${it.url}</div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button data-type="material" data-idx="${idx}" class="insertAsset px-2 py-1 rounded bg-indigo-600">Inserisci</button>
-            <button data-type="material" data-idx="${idx}" class="delAsset px-2 py-1 rounded bg-red-600">Elimina</button>
-          </div>
-        </div>`).join('');
-      // attiva listener sui bottoni generati
-      document.querySelectorAll('.delAsset').forEach(b=>{
-        b.onclick = (e)=>{
-          const t = e.currentTarget.getAttribute('data-type');
-          const i = Number(e.currentTarget.getAttribute('data-idx'));
-          const obj = loadAssets();
-          obj[t + (t==='material' ? 's' : 's')].splice(i,1); // images/videos/materials
-          saveAssets(obj);
-          renderAssets();
-        };
-      });
-      document.querySelectorAll('.insertAsset').forEach(b=>{
-        b.onclick = (e)=>{
-          const t = e.currentTarget.getAttribute('data-type');
-          const i = Number(e.currentTarget.getAttribute('data-idx'));
-          const obj = loadAssets();
-          const item = (t==='image' ? obj.images[i] : t==='video' ? obj.videos[i] : obj.materials[i]);
-          insertAssetToPage(t, item);
-        };
-      });
-    }
-
-    function addAsset(type, url, title){
-      if (!url) return alert('Inserisci un URL valido');
-      const obj = loadAssets();
-      if (type === 'image') obj.images.unshift({ url, title });
-      if (type === 'video') obj.videos.unshift({ url, title });
-      if (type === 'material') obj.materials.unshift({ url, title });
-      saveAssets(obj);
-      renderAssets();
-    }
-
-    // inserisce asset nelle rispettive sezioni della pagina
-    function insertAssetToPage(type, item){
-      if (!item || !item.url) return;
-      if (type === 'image'){
-        const grid = document.getElementById('mediaGrid');
-        if (!grid) return alert('Galleria non trovata');
-        const fig = document.createElement('figure');
-        fig.className = 'bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden';
-        fig.innerHTML = `<img src="${item.url}" alt="${item.title || 'Immagine'}" class="w-full h-44 object-cover cursor-zoom-in" data-full="${item.url}">
-                         <figcaption class="p-3 text-sm text-gray-300">${item.title || ''}</figcaption>`;
-        grid.prepend(fig);
-        // riattiva lightbox per la nuova immagine
-        fig.querySelector('img').addEventListener('click', ()=>{
-          const lbImg = document.getElementById('lightboxImg');
-          if (lbImg){ lbImg.src = item.url; document.getElementById('lightbox').classList.remove('hidden'); document.getElementById('lightbox').classList.add('flex'); }
-        });
-        alert('Immagine inserita in galleria');
-      } else if (type === 'video'){
-        // aggiunge un link/card nella sezione Media (sotto titolo)
-        const container = document.querySelector('#media .max-w-6xl > .text-center');
-        // se non troviamo struttura, append a mediaGrid
-        const mediaParent = document.getElementById('mediaGrid');
-        const node = document.createElement('div');
-        node.className = 'bg-gray-800/60 border border-gray-700 rounded-lg p-4';
-        // se è youtube link, embed small, altrimenti mostra link
-        if (/youtube\.com|youtu\.be/.test(item.url)){
-          // costruisci iframe responsivo (piccolo)
-          node.innerHTML = `<div class="aspect-w-16 aspect-h-9"><iframe src="${item.url.replace('watch?v=','embed/')}" frameborder="0" allowfullscreen class="w-full h-48"></iframe></div><div class="p-2 text-sm text-gray-300">${item.title || ''}</div>`;
-        } else {
-          node.innerHTML = `<div class="text-sm text-gray-200 mb-2">${item.title || 'Video'}</div><a href="${item.url}" target="_blank" class="text-sm text-blue-300 underline break-all">${item.url}</a>`;
-        }
-        if (mediaParent) mediaParent.prepend(node);
-        alert('Video inserito nella sezione Media');
-      } else if (type === 'material'){
-        const grid = document.getElementById('materialsGrid');
-        if (!grid) return alert('Sezione materiali non trovata');
-        const card = document.createElement('div');
-        card.className = 'bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl hover-lift border border-gray-700/30';
-        card.innerHTML = `<h3 class="text-2xl font-bold text-white mb-2">${item.title || 'Materiale'}</h3>
-          <p class="text-gray-300 mb-4">${item.title ? '' : ''}</p>
-          <a href="${item.url}" target="_blank" class="w-full inline-block bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-4 rounded-lg font-semibold text-center">📥 Apri / Scarica</a>`;
-        grid.prepend(card);
-        alert('Materiale inserito nella sezione Materiali');
-      }
-    }
-
-    // inizializza i listener del pannello webmaster
-    function initWebmasterPanel(){
-      document.getElementById('addImage')?.addEventListener('click', ()=> {
-        const url = document.getElementById('imgUrl').value.trim();
-        const title = document.getElementById('imgTitle').value.trim();
-        addAsset('image', url, title);
-      });
-      document.getElementById('addVideo')?.addEventListener('click', ()=> {
-        const url = document.getElementById('videoUrl').value.trim();
-        const title = document.getElementById('videoTitle').value.trim();
-        addAsset('video', url, title);
-      });
-      document.getElementById('addMaterial')?.addEventListener('click', ()=> {
-        const url = document.getElementById('matUrl').value.trim();
-        const title = document.getElementById('matTitle').value.trim();
-        addAsset('material', url, title);
-      });
-      document.getElementById('insertAllImages')?.addEventListener('click', ()=>{
-        const obj = loadAssets();
-        obj.images.slice().reverse().forEach(it => insertAssetToPage('image', it));
-      });
-      document.getElementById('insertAllVideos')?.addEventListener('click', ()=>{
-        const obj = loadAssets();
-        obj.videos.slice().reverse().forEach(it => insertAssetToPage('video', it));
-      });
-      document.getElementById('insertAllMaterials')?.addEventListener('click', ()=>{
-        const obj = loadAssets();
-        obj.materials.slice().reverse().forEach(it => insertAssetToPage('material', it));
-      });
-      renderAssets();
-    }
-
-    // ===== Inizializza tutto =====
     document.addEventListener('DOMContentLoaded', ()=>{
-      initNav();
-      initMobileMenu();
-      initEditingToolbar();
-      applyEditable(false); // parte non in editing
       initLightbox();
-      initWebmasterPanel();
     });
+/* --- Guard per Modalità Editing (aggiunta autonoma) -----------------------
+   Versione sostituita: intercetta il click in fase di capture e non clona/replace il bottone.
+--------------------------------------------------------------------------- */
+(function(){
+  const EDIT_CODE = 'ACAO-Edit-2025';   // <--- codice lato client (visibile nel sorgente)
+  const EDIT_KEY  = 'pctosite_editor';  // chiave sessione per sblocco
 
-    /* --- Guard per Modalità Editing (sostituzione robusta) ----------------- */
-    (function(){
-      const EDIT_CODE = 'ACAO-Edit-2025';   // codice visibile nel client (solo UX)
-      const EDIT_KEY  = 'pctosite_editor';  // chiave sessione
-      function canEdit(){ return sessionStorage.getItem(EDIT_KEY) === '1'; }
-      // intercetta il click sul pulsante toggleEdit in fase di capture
-      function handleToggleClickEvent(ev){
-        const btn = ev.target.closest && ev.target.closest('#toggleEdit');
-        if (!btn) return;
-        ev.preventDefault();
-        if (!editing && !canEdit()){
-          const code = prompt('Inserisci il codice per attivare la Modifica');
-          if (code !== EDIT_CODE) { alert('Codice errato'); return; }
-          sessionStorage.setItem(EDIT_KEY, '1');
-        }
-        editing = !editing;
-        if (typeof applyEditable === 'function') applyEditable(editing);
-      }
-      document.addEventListener('click', handleToggleClickEvent, true);
-      document.addEventListener('keydown', function(e){
-        const active = document.activeElement;
-        if ((e.key === 'Enter' || e.key === ' ') && active && active.id === 'toggleEdit') {
-          e.preventDefault();
-          handleToggleClickEvent({ target: active, preventDefault: ()=>{} });
-        }
-      });
-    })();
-  </script>
+  function canEdit(){ return sessionStorage.getItem(EDIT_KEY) === '1'; }
+
+  // Handler che intercetta il click sul #toggleEdit in fase di capture,
+  // chiedendo il codice prima che altri listener eseguano.
+  function handleToggleClickEvent(ev){
+    const btn = ev.target.closest && ev.target.closest('#toggleEdit');
+    if (!btn) return; // non è il nostro pulsante
+    ev.preventDefault();
+    // se non siamo già in editing e non abbiamo sbloccato in sessione, chiedi codice
+    if (!editing && !canEdit()){
+      const code = prompt('Inserisci il codice per attivare la Modifica');
+      if (code !== EDIT_CODE) { alert('Codice errato'); return; }
+      sessionStorage.setItem(EDIT_KEY, '1');
+    }
+    // usa la stessa variabile "editing" già presente nello script principale
+    editing = !editing;
+    if (typeof applyEditable === 'function') {
+      applyEditable(editing);
+    }
+  }
+
+  // Listener in capture per intercettare prima degli altri listener
+  document.addEventListener('click', handleToggleClickEvent, true);
+
+  // Supporto per attivare con tastiera quando il bottone è focalizzato
+  document.addEventListener('keydown', function(e){
+    const active = document.activeElement;
+    if ((e.key === 'Enter' || e.key === ' ') && active && active.id === 'toggleEdit') {
+      e.preventDefault();
+      handleToggleClickEvent({ target: active, preventDefault: ()=>{} });
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
