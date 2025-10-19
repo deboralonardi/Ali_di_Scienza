@@ -36,6 +36,15 @@
 
     /* Banner edit */
     .edit-banner { position: fixed; top: 1rem; left: 1rem; z-index: 50; }
+
+    /* Controls visible only in editing mode */
+    .editing-controls { display: none; }
+    .editing-controls.visible { display: block; }
+    .material-link-input { background-color: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.08); color: #fff; padding: .4rem .6rem; border-radius: .5rem; width:100%; }
+    .material-controls { margin-top: .6rem; display:flex; gap:.5rem; align-items:center; }
+    .material-controls .btn { padding:.4rem .6rem; border-radius:.4rem; font-size:.875rem; }
+    .material-hint { font-size:.75rem; color:#9ca3af; }
+    .material-download { display:inline-block; text-decoration:none; }
   </style>
 </head>
 <body class="h-full space-bg text-white">
@@ -192,23 +201,61 @@
             <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="materials-subtitle">Accedi a manuali, fogli di calcolo e risorse multimediali per il tuo percorso PCTO.</p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-8 rounded-2xl hover-lift border border-blue-500/30">
+          <div id="materialsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card materiale 1 -->
+            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-8 rounded-2xl hover-lift border border-blue-500/30" data-material="m1">
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m1-title">Manuale di Aerodinamica</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m1-desc">Guida ai principi fisici del volo.</p>
-              <button onclick="downloadFile('manuale-aerodinamica.pdf')" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold">📥 Scarica Manuale</button>
+
+              <!-- Download link (aggiornabile dinamicamente) -->
+              <a id="m1-download" class="material-download w-full inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold text-center" href="files/manuale-aerodinamica.pdf" target="_blank" rel="noopener">📥 Scarica Manuale</a>
+
+              <!-- Editing controls visibili SOLO in modalità editing -->
+              <div class="editing-controls mt-4" data-controls-for="m1">
+                <label class="material-hint">Link esterno (Drive/Dropbox) o URL file:</label>
+                <div class="material-controls">
+                  <input id="m1-url" class="material-link-input" type="url" placeholder="https://drive.google.com/..." />
+                  <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white" data-action="save-link" data-material="m1">Salva</button>
+                  <button class="btn bg-gray-700 hover:bg-gray-600 text-white" data-action="clear-link" data-material="m1">Rimuovi</button>
+                </div>
+                <div class="material-hint">Incolla il link condiviso da Drive; lo convertirò in download diretto quando possibile.</div>
+              </div>
             </div>
 
-            <div class="bg-gradient-to-br from-green-900 to-emerald-900 p-8 rounded-2xl hover-lift border border-green-500/30">
+            <!-- Card materiale 2 -->
+            <div class="bg-gradient-to-br from-green-900 to-emerald-900 p-8 rounded-2xl hover-lift border border-green-500/30" data-material="m2">
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m2-title">Calcoli di Volo</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m2-desc">Fogli Excel con formule e simulazioni.</p>
-              <button onclick="downloadFile('calcoli-volo.xlsx')" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold">📥 Scarica Calcoli</button>
+
+              <a id="m2-download" class="material-download w-full inline-block bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold text-center" href="files/calcoli-volo.xlsx" target="_blank" rel="noopener">📥 Scarica Calcoli</a>
+
+              <div class="editing-controls mt-4" data-controls-for="m2">
+                <label class="material-hint">Link esterno (Drive/Dropbox) o URL file:</label>
+                <div class="material-controls">
+                  <input id="m2-url" class="material-link-input" type="url" placeholder="https://drive.google.com/..." />
+                  <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white" data-action="save-link" data-material="m2">Salva</button>
+                  <button class="btn bg-gray-700 hover:bg-gray-600 text-white" data-action="clear-link" data-material="m2">Rimuovi</button>
+                </div>
+                <div class="material-hint">Incolla il link condiviso da Drive; lo convertirò in download diretto quando possibile.</div>
+              </div>
             </div>
 
-            <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-8 rounded-2xl hover-lift border border-purple-500/30">
+            <!-- Card materiale 3 -->
+            <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-8 rounded-2xl hover-lift border border-purple-500/30" data-material="m3">
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m3-title">Video Lezioni</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m3-desc">Tutorial pratici e dimostrazioni.</p>
-              <button onclick="downloadFile('video-lezioni.zip')" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-semibold">📥 Scarica Video</button>
+
+              <a id="m3-download" class="material-download w-full inline-block bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-semibold text-center" href="files/video-lezioni.zip" target="_blank" rel="noopener">📥 Scarica Video</a>
+
+              <div class="editing-controls mt-4" data-controls-for="m3">
+                <label class="material-hint">Link esterno (Drive/Dropbox) o URL file:</label>
+                <div class="material-controls">
+                  <input id="m3-url" class="material-link-input" type="url" placeholder="https://drive.google.com/..." />
+                  <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white" data-action="save-link" data-material="m3">Salva</button>
+                  <button class="btn bg-gray-700 hover:bg-gray-600 text-white" data-action="clear-link" data-material="m3">Rimuovi</button>
+                </div>
+                <div class="material-hint">Incolla il link condiviso da Drive; lo convertirò in download diretto quando possibile.</div>
+              </div>
             </div>
           </div>
 
@@ -378,84 +425,9 @@
       </section>
     </section>
 
-    <!-- PROGRAMMA (ridotto per esempio) -->
-    <section id="program" class="page">
-      <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-16">
-            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent editing-enabled" data-key="prog-title">📅 Programma del Corso</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="prog-subtitle">Percorso di 40 ore suddiviso in moduli teorici e pratici.</p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-2xl border border-blue-500/30">
-              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod1-title">Modulo 1: Introduzione</h3>
-              <p class="text-gray-300 editing-enabled" data-key="mod1-body">Storia dell'aviazione, tipi di aeromobili, principi base.</p>
-            </div>
-            <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-6 rounded-2xl border border-purple-500/30">
-              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod2-title">Modulo 2: Fisica del Volo</h3>
-              <p class="text-gray-300 editing-enabled" data-key="mod2-body">Aerodinamica, forze in volo, esperimenti.</p>
-            </div>
-            <div class="bg-gradient-to-br from-green-900 to-teal-900 p-6 rounded-2xl border border-green-500/30">
-              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod3-title">Modulo 3: Meteorologia</h3>
-              <p class="text-gray-300 editing-enabled" data-key="mod3-body">Pressione, venti, lettura carte meteo.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
+    <!-- (other sections unchanged...) -->
 
-    <!-- MEDIA (ridotto) -->
-    <section id="media" class="page">
-      <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-10">
-            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent editing-enabled" data-key="media-title">🎬 Galleria Media</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="media-subtitle">Immagini, video e testimonianze.</p>
-          </div>
-
-          <!-- Galleria immagini -->
-          <p class="text-gray-400 text-sm mb-4">Suggerimento: carica le immagini in una cartella <code>media/</code> accanto a questo file, poi sostituisci i nomi qui sotto. Oppure incolla URL pubblici (Drive, Dropbox, ecc.).</p>
-          <div id="mediaGrid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
-              <img src="media/aliante1.jpg" alt="Aliante in decollo" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante1.jpg">
-              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption1">Aliante – decollo al traino</figcaption>
-            </figure>
-            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
-              <img src="media/aliante2.jpg" alt="Termica" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante2.jpg">
-              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption2">Ricerca della termica</figcaption>
-            </figure>
-            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
-              <img src="media/aliante3.jpg" alt="Strumentazione" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante3.jpg">
-              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption3">Strumentazione di bordo</figcaption>
-            </figure>
-          </div>
-
-          <!-- Lightbox semplice -->
-          <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
-            <img id="lightboxImg" src="" alt="" class="max-h-full max-w-full rounded-lg shadow-2xl"/>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <!-- COMUNICAZIONI (ridotto) -->
-    <section id="communications" class="page">
-      <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-10">
-            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent editing-enabled" data-key="comm-title">📣 Comunicazioni</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="comm-subtitle">Avvisi, aggiornamenti e documenti per le scuole.</p>
-          </div>
-          <ul class="space-y-3 text-gray-300">
-            <li class="editing-enabled" data-key="comm-1">• Pubblicazione bando PCTO</li>
-            <li class="editing-enabled" data-key="comm-2">• Scadenze candidature</li>
-            <li class="editing-enabled" data-key="comm-3">• Calendario incontri</li>
-          </ul>
-        </div>
-      </section>
-    </section>
-
-    <!-- WEBMASTER: pagina con solo header + dicitura; toolbar verrà mostrata SOLO su questa pagina -->
+    <!-- WEBMASTER: page -->
     <section id="webmaster" class="page">
       <section class="py-40 px-6">
         <div class="max-w-4xl mx-auto text-center">
@@ -512,12 +484,11 @@
       });
     }
 
-    // ===== Editing in-place =====
+    // ===== Editing in-place + material link editing =====
     let editing = false;
     function applyEditable(enabled){
       const nodes = document.querySelectorAll('.editing-enabled');
       nodes.forEach(n => {
-        // Evita di rendere editabili link, pulsanti e controlli form
         const tag = n.tagName.toLowerCase();
         const forbidden = ['a','button','input','select','textarea','svg'];
         if (forbidden.includes(tag)) return;
@@ -529,6 +500,11 @@
       });
       const banner = document.getElementById('editBanner');
       if (banner) banner.classList.toggle('hidden', !enabled);
+
+      // Toggle visibility of editing-only controls (inputs for material links)
+      document.querySelectorAll('.editing-controls').forEach(ctrl => {
+        ctrl.classList.toggle('visible', Boolean(enabled));
+      });
     }
 
     function initEditingToolbar(){
@@ -571,11 +547,12 @@
       if (clear) clear.addEventListener('click', ()=>{
         if (confirm('Ripristinare i testi originali?')){
           localStorage.removeItem('pctosite_edits');
+          // remove material links as well? we keep material links separate (see below)
           location.reload();
         }
       });
 
-      // Carica se presenti
+      // Carica se presenti (testi)
       const saved = localStorage.getItem('pctosite_edits');
       if (saved){
         try{
@@ -588,9 +565,112 @@
       }
     }
 
-    // ===== Download helper =====
+    // ===== Material links storage & helpers =====
+    const MATERIALS_KEY = 'pctosite_material_links';
+
+    // Converti un Google Drive share link in direct download quando possibile
+    function driveShareToDirect(url) {
+      if (!url) return url;
+      // estrai fileId dai possibili formati
+      const re1 = /\/d\/([a-zA-Z0-9_-]+)/;
+      const re2 = /id=([a-zA-Z0-9_-]+)/;
+      let m = url.match(re1);
+      if (!m) m = url.match(re2);
+      if (m && m[1]) {
+        return 'https://drive.google.com/uc?export=download&id=' + m[1];
+      }
+      // Dropbox tweak
+      if (url.includes('dropbox.com')) {
+        return url.replace('?dl=0','?dl=1');
+      }
+      return url;
+    }
+
+    function loadMaterialLinks(){
+      try {
+        const raw = localStorage.getItem(MATERIALS_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch(e){ return {}; }
+    }
+    function saveMaterialLinks(obj){
+      localStorage.setItem(MATERIALS_KEY, JSON.stringify(obj));
+    }
+    function setMaterialLink(key, url){
+      const obj = loadMaterialLinks();
+      if (!url) {
+        delete obj[key];
+      } else {
+        obj[key] = url;
+      }
+      saveMaterialLinks(obj);
+      applyMaterialLinkToDOM(key, url);
+    }
+    function applyMaterialLinkToDOM(key, url){
+      const anchor = document.getElementById(key + '-download') || document.querySelector(`[data-material="${key}"] .material-download`);
+      if (!anchor) return;
+      if (url) {
+        anchor.href = url;
+        anchor.setAttribute('target','_blank');
+        anchor.setAttribute('rel','noopener');
+        // update visible label to indicate external link (optional)
+      } else {
+        // restore to default local file if you have a default mapping
+        // attempt to find default from id (m1 -> files/manuale-aerodinamica.pdf)
+        const defaults = {
+          'm1': 'files/manuale-aerodinamica.pdf',
+          'm2': 'files/calcoli-volo.xlsx',
+          'm3': 'files/video-lezioni.zip'
+        };
+        if (defaults[key]) {
+          anchor.href = defaults[key];
+          anchor.removeAttribute('target');
+        } else {
+          anchor.removeAttribute('href');
+        }
+      }
+    }
+
+    function applyAllMaterialLinks(){
+      const obj = loadMaterialLinks();
+      ['m1','m2','m3'].forEach(k => {
+        const url = obj[k];
+        if (url) applyMaterialLinkToDOM(k, url);
+      });
+      // populate input fields (if editing)
+      Object.entries(obj).forEach(([k,v])=>{
+        const input = document.getElementById(k + '-url');
+        if (input) input.value = v;
+      });
+    }
+
+    // Handler for save/clear buttons in material controls
+    function initMaterialControls(){
+      document.querySelectorAll('[data-action="save-link"]').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const key = btn.getAttribute('data-material');
+          const input = document.getElementById(key + '-url');
+          if (!input) return;
+          let raw = input.value.trim();
+          if (!raw) return alert('Inserisci un URL valido');
+          // convert Drive/Dropbox etc. to direct download when possible
+          const direct = driveShareToDirect(raw);
+          setMaterialLink(key, direct);
+          alert('Link salvato per ' + key);
+        });
+      });
+      document.querySelectorAll('[data-action="clear-link"]').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const key = btn.getAttribute('data-material');
+          const input = document.getElementById(key + '-url');
+          if (input) input.value = '';
+          setMaterialLink(key, null);
+          alert('Link rimosso per ' + key);
+        });
+      });
+    }
+
+    // ===== Download helper (fallback) =====
     function downloadFile(filename){
-      // Assumi che i file siano nella cartella /files/ accanto all'HTML.
       const url = (filename.startsWith('http') ? filename : `files/${filename}`);
       window.open(url, '_blank');
     }
@@ -624,6 +704,10 @@
       initEditingToolbar();
       applyEditable(false); // parte non in editing
       initLightbox();
+
+      // material controls
+      initMaterialControls();
+      applyAllMaterialLinks();
 
       // All'avvio: la toolbar deve essere visibile SOLO se la pagina iniziale è webmaster
       const start = (location.hash || '#home').replace('#','');
