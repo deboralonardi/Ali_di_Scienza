@@ -113,7 +113,7 @@
   </div>
 
   <main class="min-h-full">
-    <!-- HOME -->
+    <!-- HOME (Progetto) -->
     <section id="home" class="page active">
       <section class="py-20 px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-20">
@@ -152,47 +152,37 @@
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-gradient-to-br from-blue-900 to-purple-900 p-8 rounded-2xl hover-lift border border-blue-500/30">
               <div class="flex items-center gap-3 mb-4">
-                <!-- Icona: atomo / aerodinamica -->
                 <svg class="w-8 h-8 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="1.6"/>
-                  <path d="M19 12c0 1.5-3.1 2.8-7 2.8S5 13.5 5 12s3.1-2.8 7-2.8 7 1.3 7 2.8z"/>
-                  <path d="M16.95 7.05c1.06 1.06-.35 4.09-3.15 6.89s-5.83 4.21-6.89 3.15  .35-4.09 3.15-6.89 5.83-4.21 6.89-3.15z"/>
-                  <path d="M7.05 7.05c-1.06 1.06.35 4.09 3.15 6.89s5.83 4.21 6.89 3.15 -.35-4.09-3.15-6.89S8.11 6 7.05 7.05z"/>
                 </svg>
-                <h3$1data-key="feat1-title" class="text-2xl font-bold text-white">Fisica del Volo</h3>
+                <h3 class="text-2xl font-bold text-white">Fisica del Volo</h3>
               </div>
-              <p class="text-gray-300 editing-enabled" data-key="feat1-body">Comprendi come e perché vola l'aliante: volo planato, resistenza dell'aria, cenni di pilotaggio.</p>
+              <p class="text-gray-300">Comprendi come e perché vola l'aliante: volo planato, resistenza dell'aria, cenni di pilotaggio.</p>
             </div>
             <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-8 rounded-2xl hover-lift border border-purple-500/30">
               <div class="flex items-center gap-3 mb-4">
-                <!-- Icona: sole tra le nuvole -->
                 <svg class="w-8 h-8 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="7" cy="7" r="3"/>
-                  <path d="M7 1v2M7 11v2M1 7h2M11 7h2M3.5 3.5l1.4 1.4M9.1 9.1l1.4 1.4M3.5 10.5l1.4-1.4M9.1 4.9l1.4-1.4"/>
-                  <path d="M16 20H7a4 4 0 1 1 0-8 5 5 0 0 1 9.7 1.2A3.5 3.5 0 1 1 16 20z"/>
                 </svg>
-                <h3$1data-key="feat2-title" class="text-2xl font-bold text-white">Meteorologia</h3>
+                <h3 class="text-2xl font-bold text-white">Meteorologia</h3>
               </div>
-              <p class="text-gray-300 editing-enabled" data-key="feat2-body">Pressione, vento, stabilità, nubi e fenomeni convettivi per un volo consapevole.</p>
+              <p class="text-gray-300">Pressione, vento, stabilità, nubi e fenomeni convettivi per un volo consapevole.</p>
             </div>
             <div class="bg-gradient-to-br from-cyan-900 to-blue-900 p-8 rounded-2xl hover-lift border border-cyan-500/30">
               <div class="flex items-center gap-3 mb-4">
-                <!-- Icona: bussola/navigazione -->
                 <svg class="w-8 h-8 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"/>
-                  <polygon points="16 8 14 14 8 16 10 10 16 8"/>
-                  <circle cx="12" cy="12" r="1"/>
                 </svg>
-                <h3$1data-key="feat3-title" class="text-2xl font-bold text-white">Tecnica di Pilotaggio</h3>
+                <h3 class="text-2xl font-bold text-white">Tecnica di Pilotaggio</h3>
               </div>
-              <p class="text-gray-300 editing-enabled" data-key="feat3-body">Strumenti, tecniche, gestione emergenze e pianificazione del volo.</p>
+              <p class="text-gray-300">Strumenti, tecniche, gestione emergenze e pianificazione del volo.</p>
             </div>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- MATERIALI -->
+    <!-- MATERIALI (unchanged core structure) -->
     <section id="materials" class="page">
       <section class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
@@ -207,10 +197,8 @@
               <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="m1-title">Manuale di Aerodinamica</h3>
               <p class="text-gray-300 mb-4 editing-enabled" data-key="m1-desc">Guida ai principi fisici del volo.</p>
 
-              <!-- Download link (aggiornabile dinamicamente) -->
               <a id="m1-download" class="material-download w-full inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold text-center" href="files/manuale-aerodinamica.pdf" target="_blank" rel="noopener">📥 Scarica Manuale</a>
 
-              <!-- Editing controls visibili SOLO in modalità editing -->
               <div class="editing-controls mt-4" data-controls-for="m1">
                 <label class="material-hint">Link esterno (Drive/Dropbox) o URL file:</label>
                 <div class="material-controls">
@@ -285,147 +273,158 @@
       </section>
     </section>
 
-    <!-- CANDIDATURE -->
-    <section id="application" class="page">
+    <!-- PROGRAMMA: restored and enriched -->
+    <section id="program" class="page">
       <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-16">
-            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent editing-enabled" data-key="app-title">🎯 Candidature PCTO</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="app-subtitle">Compila il modulo per candidare la tua scuola al progetto "Ali di Scienza".</p>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent editing-enabled" data-key="prog-title">📅 Programma del Corso (40 ore)</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="prog-subtitle">Il percorso è suddiviso in moduli teorici e attività pratiche, con verifica finale.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-purple-500/30">
-            <form id="applicationForm" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="schoolName" class="block text-sm font-medium text-gray-300 mb-2">🏫 Nome Istituto *</label>
-                  <input type="text" id="schoolName" name="schoolName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                </div>
-                <div>
-                  <label for="schoolType" class="block text-sm font-medium text-gray-300 mb-2">📚 Tipo di Scuola *</label>
-                  <select id="schoolType" name="schoolType" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Seleziona tipo</option>
-                    <option value="liceo-scientifico">Liceo Scientifico</option>
-                    <option value="istituto-tecnico">Istituto Tecnico</option>
-                    <option value="istituto-professionale">Istituto Professionale</option>
-                    <option value="altro">Altro</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="city" class="block text-sm font-medium text-gray-300 mb-2">🌍 Città *</label>
-                  <input type="text" id="city" name="city" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                </div>
-                <div>
-                  <label for="province" class="block text-sm font-medium text-gray-300 mb-2">📍 Provincia *</label>
-                  <input type="text" id="province" name="province" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                </div>
-              </div>
-
-              <div class="border-t border-gray-600 pt-6">
-                <h3 class="text-xl font-bold text-white mb-4 editing-enabled" data-key="ref-title">👨🏫 Referente del Progetto</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label for="contactName" class="block text-sm font-medium text-gray-300 mb-2">👤 Nome e Cognome *</label>
-                    <input type="text" id="contactName" name="contactName" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                  </div>
-                  <div>
-                    <label for="contactRole" class="block text-sm font-medium text-gray-300 mb-2">💼 Ruolo *</label>
-                    <input type="text" id="contactRole" name="contactRole" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                  </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <label for="contactEmail" class="block text-sm font-medium text-gray-300 mb-2">📧 Email *</label>
-                    <input type="email" id="contactEmail" name="contactEmail" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                  </div>
-                  <div>
-                    <label for="contactPhone" class="block text-sm font-medium text-gray-300 mb-2">📱 Telefono</label>
-                    <input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="border-t border-gray-600 pt-6">
-                <h3 class="text-xl font-bold text-white mb-4 editing-enabled" data-key="details-title">📊 Dettagli del Progetto</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label for="studentsNumber" class="block text-sm font-medium text-gray-300 mb-2">👥 Numero Studenti *</label>
-                    <select id="studentsNumber" name="studentsNumber" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      <option value="">Seleziona numero</option>
-                      <option value="10-20">10–20</option>
-                      <option value="21-30">21–30</option>
-                      <option value="31-50">31–50</option>
-                      <option value="50+">Più di 50</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="classYear" class="block text-sm font-medium text-gray-300 mb-2">🎓 Anno Scolastico *</label>
-                    <select id="classYear" name="classYear" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      <option value="">Seleziona anno</option>
-                      <option value="terzo">Terzo</option>
-                      <option value="quarto">Quarto</option>
-                      <option value="quinto">Quinto</option>
-                      <option value="misto">Classi Miste</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <label for="projectPeriod" class="block text-sm font-medium text-gray-300 mb-2">📅 Periodo Preferito *</label>
-                  <select id="projectPeriod" name="projectPeriod" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Seleziona periodo</option>
-                    <option value="ottobre-dicembre">Ottobre – Dicembre</option>
-                    <option value="gennaio-marzo">Gennaio – Marzo</option>
-                    <option value="aprile-giugno">Aprile – Giugno</option>
-                    <option value="flessibile">Flessibile</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="border-t border-gray-600 pt-6">
-                <label for="motivation" class="block text-sm font-medium text-gray-300 mb-2">💭 Motivazioni e Aspettative *</label>
-                <textarea id="motivation" name="motivation" rows="4" required placeholder="Perché siete interessati al progetto e cosa vi aspettate..." class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
-              </div>
-
-              <div class="border-t border-gray-600 pt-6">
-                <label class="flex items-start space-x-3 text-gray-300">
-                  <input type="checkbox" id="privacy" name="privacy" required class="w-5 h-5 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 mt-1" />
-                  <span class="text-sm">Accetto il trattamento dei dati personali (GDPR) per le finalità del progetto PCTO *</span>
-                </label>
-              </div>
-
-              <div class="text-center pt-6">
-                <button type="submit" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover-lift neon-glow">🚀 Invia Candidatura</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="mt-12 grid md:grid-cols-2 gap-8">
-            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-xl">
-              <h3 class="text-xl font-bold text-white mb-4 editing-enabled" data-key="proc-title">📋 Processo di Selezione</h3>
-              <ul class="space-y-2 text-gray-300 text-sm">
-                <li class="editing-enabled" data-key="proc-1">• Valutazione candidature entro 15 giorni</li>
-                <li class="editing-enabled" data-key="proc-2">• Colloquio conoscitivo con il referente</li>
-                <li class="editing-enabled" data-key="proc-3">• Definizione calendario e modalità</li>
-                <li class="editing-enabled" data-key="proc-4">• Avvio del progetto</li>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-2xl border border-blue-500/30">
+              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod1-title">Modulo 1: Introduzione all'Aviazione (4 ore)</h3>
+              <p class="text-gray-300 editing-enabled" data-key="mod1-body">Storia dell'aviazione, classificazione degli aeromobili, normativa di base, sicurezza.</p>
+              <ul class="text-sm text-gray-300 mt-3 space-y-1">
+                <li>• Lezioni frontali e discussione</li>
+                <li>• Materiale: manuale introduttivo</li>
               </ul>
             </div>
-            <div class="bg-gradient-to-br from-green-900 to-teal-900 p-6 rounded-xl">
-              <h3 class="text-xl font-bold text-white mb-4 editing-enabled" data-key="contatti-title">📞 Contatti</h3>
-              <div class="space-y-2 text-gray-300 text-sm">
-                <p class="editing-enabled" data-key="contact-email">📧 Email: pcto@aeroclubao.it</p>
-                <p class="editing-enabled" data-key="contact-phone">📱 Telefono: +39 0165 123456</p>
-                <p class="editing-enabled" data-key="contact-site">🌐 Sito: www.aeroclubao.it</p>
-              </div>
+
+            <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-6 rounded-2xl border border-purple-500/30">
+              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod2-title">Modulo 2: Fisica del Volo (12 ore)</h3>
+              <p class="text-gray-300 editing-enabled" data-key="mod2-body">Forze in volo, portanza, resistenza, profili alari; esercitazioni e misure.</p>
+              <ul class="text-sm text-gray-300 mt-3 space-y-1">
+                <li>• Esperimenti pratici in laboratorio</li>
+                <li>• Calcoli di prestazioni</li>
+              </ul>
             </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-teal-900 p-6 rounded-2xl border border-green-500/30">
+              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod3-title">Modulo 3: Meteorologia Aeronautica (8 ore)</h3>
+              <p class="text-gray-300 editing-enabled" data-key="mod3-body">Elementi di meteorologia, lettura carte meteo, previsioni e strumenti meteo.</p>
+              <ul class="text-sm text-gray-300 mt-3 space-y-1">
+                <li>• Esercitazioni pratiche con dati reali</li>
+                <li>• Interpretazione di carte sinottiche</li>
+              </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-amber-800 to-orange-700 p-6 rounded-2xl border border-amber-500/30">
+              <h3 class="text-2xl font-bold text-white mb-2 editing-enabled" data-key="mod4-title">Modulo 4: Tecnica di Pilotaggio e Simulazioni (12 ore)</h3>
+              <p class="text-gray-300 editing-enabled" data-key="mod4-body">Tecniche di pilotaggio, gestione emergenze, uso di simulatori e strumentazione.</p>
+              <ul class="text-sm text-gray-300 mt-3 space-y-1">
+                <li>• Sessioni su simulatore</li>
+                <li>• Valutazione pratica finale</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-10 text-center">
+            <a href="files/prog-syllabus.pdf" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold" target="_blank">📥 Scarica il Programma completo (PDF)</a>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- (other sections unchanged...) -->
+    <!-- MEDIA: restored and specific -->
+    <section id="media" class="page">
+      <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent editing-enabled" data-key="media-title">🎬 Galleria Media</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="media-subtitle">Foto, video e risorse multimediali raccolte durante le attività.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-8" id="mediaGrid">
+            <!-- images: placeholders, can be replaced via webmaster or by editing DS links -->
+            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
+              <img src="media/aliante1.jpg" alt="Aliante in decollo" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante1.jpg">
+              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption1">Aliante – decollo al traino</figcaption>
+            </figure>
+
+            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
+              <img src="media/aliante2.jpg" alt="Termica" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante2.jpg">
+              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption2">Ricerca della termica</figcaption>
+            </figure>
+
+            <figure class="bg-gray-800/60 border border-gray-700 rounded-lg overflow-hidden">
+              <img src="media/aliante3.jpg" alt="Strumentazione" class="w-full h-44 object-cover cursor-zoom-in" data-full="media/aliante3.jpg">
+              <figcaption class="p-3 text-sm text-gray-300 editing-enabled" data-key="caption3">Strumentazione di bordo</figcaption>
+            </figure>
+          </div>
+
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Video selezionati</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-gray-800/60 p-4 rounded-lg">
+                <div class="aspect-w-16 aspect-h-9">
+                  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="w-full h-48 rounded"></iframe>
+                </div>
+                <p class="text-sm text-gray-300 mt-2 editing-enabled" data-key="video1-caption">Esempio: introduzione alla fisica del volo</p>
+              </div>
+              <div class="bg-gray-800/60 p-4 rounded-lg">
+                <div class="aspect-w-16 aspect-h-9">
+                  <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" frameborder="0" allowfullscreen class="w-full h-48 rounded"></iframe>
+                </div>
+                <p class="text-sm text-gray-300 mt-2 editing-enabled" data-key="video2-caption">Esempio: uso del simulatore</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 text-sm text-gray-400">
+            <p>Nota per il webmaster: puoi aggiornare i media inserendo link diretti (Drive/Dropbox) nella sezione Webmaster; i contenuti aggiunti saranno visualizzati a tutti quando li salvi centralmente.</p>
+          </div>
+
+          <!-- Lightbox semplice -->
+          <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+            <img id="lightboxImg" src="" alt="" class="max-h-full max-w-full rounded-lg shadow-2xl"/>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- COMUNICAZIONI: restored -->
+    <section id="communications" class="page">
+      <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-10">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent editing-enabled" data-key="comm-title">📣 Comunicazioni e Avvisi</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto editing-enabled" data-key="comm-subtitle">Avvisi, scadenze e documentazione ufficiale per le scuole partecipanti.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-gray-800/60 p-6 rounded-lg border border-gray-700">
+              <h3 class="text-xl font-bold text-white mb-3 editing-enabled" data-key="comm-latest-title">Ultimi avvisi</h3>
+              <ul id="comm-list" class="space-y-3 text-gray-300">
+                <li class="editing-enabled" data-key="comm-1">• 2025-09-15 — Pubblicazione bando PCTO (scadenza candidature: 2025-10-15)</li>
+                <li class="editing-enabled" data-key="comm-2">• 2025-10-01 — Calendario incontri pubblicato (prima sessione: 2025-10-20)</li>
+                <li class="editing-enabled" data-key="comm-3">• 2025-10-05 — Distribuzione materiali preparatori</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-800/60 p-6 rounded-lg border border-gray-700">
+              <h3 class="text-xl font-bold text-white mb-3 editing-enabled" data-key="comm-docs-title">Documenti utili</h3>
+              <ul class="text-gray-300 space-y-2">
+                <li><a href="files/bando-pcto.pdf" class="text-blue-300 underline" target="_blank">📄 Bando PCTO (PDF)</a></li>
+                <li><a href="files/calendario-incontri.pdf" class="text-blue-300 underline" target="_blank">📅 Calendario Incontri (PDF)</a></li>
+                <li><a href="files/checklist-docs.docx" class="text-blue-300 underline" target="_blank">📋 Checklist documenti (DOCX)</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg text-gray-300">
+            <h4 class="font-bold mb-3 editing-enabled" data-key="comm-subscribe-title">Iscriviti per aggiornamenti</h4>
+            <p class="mb-3 text-sm">Inserisci la tua email per ricevere notifiche via email (nota: in questa demo la mail viene memorizzata localmente nel browser).</p>
+            <div class="flex gap-3 max-w-md">
+              <input id="commEmail" type="email" placeholder="tuo@email.scuola.it" class="flex-1 px-3 py-2 rounded bg-gray-700 text-white" />
+              <button id="commSubscribe" class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700">Iscriviti</button>
+            </div>
+            <div id="commFeedback" class="text-sm mt-3 text-green-400 hidden"></div>
+          </div>
+        </div>
+      </section>
+    </section>
 
     <!-- WEBMASTER: page -->
     <section id="webmaster" class="page">
@@ -490,7 +489,7 @@
       const nodes = document.querySelectorAll('.editing-enabled');
       nodes.forEach(n => {
         const tag = n.tagName.toLowerCase();
-        const forbidden = ['a','button','input','select','textarea','svg'];
+        const forbidden = ['a','button','input','select','textarea','svg','iframe'];
         if (forbidden.includes(tag)) return;
         if (enabled) {
           n.setAttribute('contenteditable','true');
@@ -547,7 +546,6 @@
       if (clear) clear.addEventListener('click', ()=>{
         if (confirm('Ripristinare i testi originali?')){
           localStorage.removeItem('pctosite_edits');
-          // remove material links as well? we keep material links separate (see below)
           location.reload();
         }
       });
@@ -612,10 +610,8 @@
         anchor.href = url;
         anchor.setAttribute('target','_blank');
         anchor.setAttribute('rel','noopener');
-        // update visible label to indicate external link (optional)
       } else {
         // restore to default local file if you have a default mapping
-        // attempt to find default from id (m1 -> files/manuale-aerodinamica.pdf)
         const defaults = {
           'm1': 'files/manuale-aerodinamica.pdf',
           'm2': 'files/calcoli-volo.xlsx',
@@ -624,6 +620,7 @@
         if (defaults[key]) {
           anchor.href = defaults[key];
           anchor.removeAttribute('target');
+          anchor.removeAttribute('rel');
         } else {
           anchor.removeAttribute('href');
         }
@@ -637,7 +634,7 @@
         if (url) applyMaterialLinkToDOM(k, url);
       });
       // populate input fields (if editing)
-      Object.entries(obj).forEach(([k,v])=>{
+      Object.entries(loadMaterialLinks()).forEach(([k,v])=>{
         const input = document.getElementById(k + '-url');
         if (input) input.value = v;
       });
@@ -652,7 +649,6 @@
           if (!input) return;
           let raw = input.value.trim();
           if (!raw) return alert('Inserisci un URL valido');
-          // convert Drive/Dropbox etc. to direct download when possible
           const direct = driveShareToDirect(raw);
           setMaterialLink(key, direct);
           alert('Link salvato per ' + key);
@@ -666,6 +662,26 @@
           setMaterialLink(key, null);
           alert('Link rimosso per ' + key);
         });
+      });
+    }
+
+    // ===== Communications subscribe (local demo) =====
+    function initCommunications(){
+      const btn = document.getElementById('commSubscribe');
+      const emailInput = document.getElementById('commEmail');
+      const feedback = document.getElementById('commFeedback');
+      btn?.addEventListener('click', ()=>{
+        const email = emailInput.value.trim();
+        if (!email || !email.includes('@')) return alert('Inserisci una email valida');
+        let list = [];
+        try { list = JSON.parse(localStorage.getItem('pctosite_subscribers') || '[]'); } catch(e){ list = []; }
+        if (!list.includes(email)) {
+          list.push(email);
+          localStorage.setItem('pctosite_subscribers', JSON.stringify(list));
+        }
+        feedback.textContent = 'Grazie — email salvata localmente (demo).';
+        feedback.classList.remove('hidden');
+        setTimeout(()=> feedback.classList.add('hidden'), 4000);
       });
     }
 
@@ -708,6 +724,9 @@
       // material controls
       initMaterialControls();
       applyAllMaterialLinks();
+
+      // communications
+      initCommunications();
 
       // All'avvio: la toolbar deve essere visibile SOLO se la pagina iniziale è webmaster
       const start = (location.hash || '#home').replace('#','');
